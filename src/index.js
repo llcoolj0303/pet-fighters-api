@@ -3,6 +3,8 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const petsRouter = require("./routes/pets");
+const powersRouter = require("./routes/powers");
+const itemsRouter = require("./routes/items");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,6 +18,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/pets", petsRouter);
+app.use("/api/powers", powersRouter);
+app.use("/api/items", itemsRouter);
 
 // 404
 app.use((req, res) => {
